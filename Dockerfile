@@ -22,8 +22,14 @@ RUN 	add-apt-repository ppa:jonathonf/ffmpeg-3
 # Updating existing tools
 RUN		apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 
+# Install Git
+RUN		apt-get install -y git
+
+# Install .Net Core
+RUN		apt-get install -y dotnet-sdk-2.0.0
+
 # Install required software
-RUN 	apt-get install -y git dotnet-sdk-2.0.0 libopus0 opus-tools libopus-dev libsodium-dev ffmpeg rsync python python3-pip redis-server
+RUN 	apt-get install -y libopus0 opus-tools libopus-dev libsodium-dev ffmpeg rsync python python3-pip redis-server
 
 #Add youtube-dl
 RUN 	curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && chmod a+rx /usr/local/bin/youtube-dl
