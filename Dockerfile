@@ -26,13 +26,13 @@ RUN		apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 RUN		apt-get update && apt-get install -y git
 
 # Install .Net Core
-RUN		apt-get install -y dotnet-sdk-2.0.0
+RUN		apt-get update && apt-get install -y dotnet-sdk-2.0.0
+
+# Install Redis-server
+RUN		apt-get update && apt-get install -y redis-server
 
 # Install required software
-RUN 	apt-get install -y libopus0 opus-tools libopus-dev libsodium-dev ffmpeg rsync python python3-pip 
-
-# Install redis-server
-RUN		apt-get update && apt-get install -y redis-server
+RUN 	apt-get update && apt-get install -y libopus0 opus-tools libopus-dev libsodium-dev ffmpeg rsync python python3-pip
 
 #Add youtube-dl
 RUN 	curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && chmod a+rx /usr/local/bin/youtube-dl
