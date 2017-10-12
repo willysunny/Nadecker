@@ -14,14 +14,14 @@ mv -n /opt/NadekoBot/src/NadekoBot/credentials.json /root/nadeko/credentials.jso
 rm /opt/NadekoBot/src/NadekoBot/credentials.json > /dev/null 2>&1
 ln -s /root/nadeko/credentials.json /opt/NadekoBot/src/NadekoBot/credentials.json > /dev/null 2>&1
 
-#echo ""
-#echo "Patching Nadeko Data Folder"
-#mkdir -p /root/nadeko/patch
-#cd /root/nadeko/patch && bash "./patch.sh"
+echo ""
+echo "Patching Nadeko Data Folder"
+mkdir -p /root/nadeko/patch
+cd /root/nadeko/patch && bash "./patch.sh"
 
 echo ""
 echo "Running NadekoBot with auto restart Please wait."
-cd /NadekoBot/src/NadekoBot
+cd /opt/NadekoBot/src/NadekoBot
 while :; do dotnet run -c Release; sleep 5s; done
 echo "Done"
 
