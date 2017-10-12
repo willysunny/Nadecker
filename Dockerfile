@@ -23,7 +23,7 @@ RUN 	add-apt-repository ppa:jonathonf/ffmpeg-3
 RUN		apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 
 # Install Git
-RUN		apt-get install -y git
+RUN		apt-get update && apt-get install -y git
 
 # Install .Net Core
 RUN		apt-get install -y dotnet-sdk-2.0.0
