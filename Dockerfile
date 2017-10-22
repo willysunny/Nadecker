@@ -6,12 +6,12 @@ FROM phusion/baseimage:latest
 WORKDIR /opt/
 
 # Prepare for Basic stuff
-RUN		apt-get update
-RUN		apt-get install software-properties-common apt-transport-https curl -y
+RUN	apt-get update
+RUN	apt-get install software-properties-common apt-transport-https curl -y
 
 # Register the trusted Microsoft signature key
-RUN		curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-RUN		mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+RUN	curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+RUN	mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 
 # Register the Microsoft Product feed for your distro version
 RUN 	sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
@@ -20,16 +20,16 @@ RUN 	sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsof
 RUN 	add-apt-repository ppa:jonathonf/ffmpeg-3
 
 # Updating existing tools
-RUN		apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
+RUN	apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 
 # Install Git
-RUN		apt-get update && apt-get install -y git
+RUN	apt-get update && apt-get install -y git
 
 # Install .Net Core
-RUN		apt-get update && apt-get install -y dotnet-sdk-2.0.0
+RUN	apt-get update && apt-get install -y dotnet-sdk-2.0.0 && dotnet add package SixLabors.ImageSharp --version 1.0.0-beta0001
 
 # Install Redis-server
-RUN		apt-get update && apt-get install -y redis-server
+RUN	apt-get update && apt-get install -y redis-server
 
 # Install required software
 RUN 	apt-get update && apt-get install -y libopus0 opus-tools libopus-dev libsodium-dev ffmpeg rsync python python3-pip
