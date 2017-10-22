@@ -43,6 +43,7 @@ echo "Download done"
 echo ""
 echo "Building NadekoBot"
 dotnet add /opt/NadekoBot/src/NadekoBot package SixLabors.ImageSharp --version 1.0.0-beta0001 -s https://www.myget.org/F/imagesharp/api/v3/index.json
+dotnet add /opt/NadekoBot/src/NadekoBot package SixLabors.Core --version 1.0.0-ci0004 -s https://www.myget.org/F/sixlabors/api/v3/index.json
 dotnet build --configuration Release
 echo ""
 echo "Building done."
