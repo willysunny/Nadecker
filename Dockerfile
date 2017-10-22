@@ -26,7 +26,7 @@ RUN	apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 RUN	apt-get update && apt-get install -y git
 
 # Install .Net Core
-RUN	apt-get update && apt-get install -y dotnet-sdk-2.0.0 && dotnet add package SixLabors.ImageSharp --version 1.0.0-beta0001
+RUN	apt-get update && apt-get install -y dotnet-sdk-2.0.0
 
 # Install Redis-server
 RUN	apt-get update && apt-get install -y redis-server

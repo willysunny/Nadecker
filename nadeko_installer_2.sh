@@ -36,6 +36,7 @@ echo "NadekoBot downloaded."
 echo ""
 echo "Downloading Nadeko dependencies"
 cd $root/NadekoBot
+dotnet add package SixLabors.ImageSharp --version 1.0.0-beta0001
 dotnet restore
 echo ""
 echo "Download done"
