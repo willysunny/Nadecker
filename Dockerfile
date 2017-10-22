@@ -38,7 +38,7 @@ RUN	apt-get update && apt-get install -y libopus0 opus-tools libopus-dev libsodi
 RUN	curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && chmod a+rx /usr/local/bin/youtube-dl
 
 #Download and install stable version of Nadeko
-RUN	curl -H "Cache-Control: no-cache" https://raw.githubusercontent.com/willysunny/Nadecker/master/nadeko_installer_2_0_x.sh -o ./nadeko_installer.sh && chmod 755 nadeko_installer.sh && ./nadeko_installer.sh
+RUN	curl -H "Cache-Control: no-cache" https://raw.githubusercontent.com/willysunny/Nadecker/master/nadeko_installer_2_0_1.sh -o ./nadeko_installer.sh && chmod 755 nadeko_installer.sh && ./nadeko_installer.sh
 RUN	curl -O -H "Cache-Control: no-cache" https://raw.githubusercontent.com/willysunny/Nadecker/master/nadeko_autorestart.sh && chmod 755 nadeko_autorestart.sh
 	
 VOLUME ["/root/nadeko"]
