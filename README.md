@@ -1,0 +1,2 @@
+# Nadecker
+NadekoBot for Docker
