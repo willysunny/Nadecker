@@ -33,7 +33,7 @@ RUN	apt-get update && apt-get install -y dotnet-sdk-2.1
 RUN	apt-get update && apt-get install -y redis-server
 
 # Install required software
-RUN	apt-get update && apt-get install -y libopus0 opus-tools libopus-dev libsodium-dev ffmpeg rsync python python3-pip python3.5-dev
+RUN	apt-get update && apt-get install -y libopus0 opus-tools libopus-dev libsodium-dev ffmpeg rsync python python3-pip python3.5-dev tzdata
 
 #Add youtube-dl
 RUN	curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && chmod a+rx /usr/local/bin/youtube-dl
