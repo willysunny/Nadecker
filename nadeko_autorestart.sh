@@ -26,7 +26,7 @@ echo "Starting Redis-Server"
 echo ""
 echo "Running NadekoBot with auto restart Please wait."
 cd /opt/NadekoBot/src/NadekoBot
-while :; do dotnet run -c Release; sleep 5s; done
+while :; do dotnet run -c Release --no-build; sleep 5s; done
 echo "Done"
 
 exit 0
